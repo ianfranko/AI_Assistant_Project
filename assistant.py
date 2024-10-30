@@ -99,3 +99,8 @@ def get_audio_input():
         except sr.RequestError:
             return "Could not request results from Google Speech Recognition service."
 
+use_voice = input("Would you like to use voice commands? (yes/no) ").lower() == 'yes'
+if use_voice:
+    user_input = get_audio_input()
+else:
+    user_input = input("You: ")
